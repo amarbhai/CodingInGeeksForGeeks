@@ -59,7 +59,8 @@ public class maximizeTheCutSegments {
 	public static void main(String[] args) {
 		FastReader s = new FastReader();
 		int t = s.nextInt();
-
+int count =0;
+count=1;
 		while (t-- > 0) {
 			//code
 			

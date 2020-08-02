@@ -1,10 +1,12 @@
-//Link https://practice.geeksforgeeks.org/problems/save-ironman/0
+
+
+
 // Working program with FastReader 
 import java.io.*;
-//import java.lang.*;
+import java.lang.*;
 import java.util.*;
 
-public class Main {
+public class Rotation {
 
 	static class FastReader {
 		BufferedReader br;
@@ -54,20 +56,26 @@ public class Main {
 
 		while (t-- > 0) {
 			//code
-			String str=s.nextLine();
-			str=str.replaceAll("[^A-Za-z0-9]", "");
-			
-			str=str.toLowerCase();
-			StringBuilder sb = new StringBuilder(str);
-			//String str1= sb.reverse().toString();
-			System.out.println(sb);
-			System.out.println(str);
-			//a1@#1A
-			sb=sb.reverse();
-			if(sb.equals(str)){
-				System.out.println("YES");
-			}else {
-				System.out.println("NO");
+			int n=s.nextInt();
+			long ar[] = new long[n];
+			for (int i = 0; i < n; i++) {
+				ar[i]=s.nextLong();
+			}
+			boolean isthere=false;
+			int firstIncrease=1,lastIncrease=0;
+			for (int i = 1; i < n; i++) {
+				if(ar[i]>=ar[i-1] && !isthere)firstIncrease++;
+				else break;
+				if(firstIncrease == n){
+					isthere=true;
+					break;
+				}
+			}
+			if (isthere) {
+				System.out.println("0");
+			} else {
+				System.out.println(firstIncrease);
+
 			}
 		}
 

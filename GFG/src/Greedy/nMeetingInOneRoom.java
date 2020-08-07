@@ -9,7 +9,7 @@ import java.util.*;
 
 class Pair{
 	int x,y,z;
-	Pair(int x,int y,int z){
+	Pair(final int x,final int y,final int z){
 		this.x=x;
 		this.y=y;
 		this.z=z;
@@ -29,7 +29,7 @@ public class nMeetingInOneRoom {
 			while (st == null || !st.hasMoreElements()) {
 				try {
 					st = new StringTokenizer(br.readLine());
-				} catch (IOException e) {
+				} catch (final IOException e) {
 					e.printStackTrace();
 				}
 			}
@@ -52,23 +52,23 @@ public class nMeetingInOneRoom {
 			String str = "";
 			try {
 				str = br.readLine();
-			} catch (IOException e) {
+			} catch (final IOException e) {
 				e.printStackTrace();
 			}
 			return str;
 		}
 	}
 
-	public static void main(String[] args) {
-		FastReader s = new FastReader();
+	public static void main(final String[] args) {
+		final FastReader s = new FastReader();
 		int t = s.nextInt();
 
 		while (t-- > 0) {
 			//code
-			int n = s.nextInt();
-			Pair p[] = new Pair[n];
-			int ar[] = new int[n];
-			int ar1[] = new int[n];
+			final int n = s.nextInt();
+			final Pair p[] = new Pair[n];
+			final int ar[] = new int[n];
+			final int ar1[] = new int[n];
 			for (int i = 0; i < n; i++) {
 				ar[i]= s.nextInt();
 
@@ -80,34 +80,34 @@ public class nMeetingInOneRoom {
 			}
 
 			Arrays.sort(p,new Comparator<Pair>(){
-				@Override public int compare(Pair p1, Pair p2) { 
+				public int compare(final Pair p1, final Pair p2) { 
 					return p1.y - p2.y; 
 				} 
 
 				//	return p1.y-p2.y;
 			});
 
-//			ArrayList<Integer> al=new ArrayList<>();
-//			al.add(p[0].z);
-			
-		int finish=p[0].y;
-		StringBuffer sb=new StringBuffer();
-		sb.append(p[0].z+1);
-		sb.append(" ");
+			//			ArrayList<Integer> al=new ArrayList<>();
+			//			al.add(p[0].z);
+
+			int finish=p[0].y;
+			final StringBuffer sb=new StringBuffer();
+			sb.append(p[0].z+1);
+			sb.append(" ");
 			for (int i = 1; i < n; i++) {
-				
+
 				if(p[i].x >= finish){
 					//al.add(p[i].z);
 					//al.add(" ");
 					sb.append(p[i].z+1);
 					sb.append(" ");
 					finish=p[i].y;
-					
+
 				}
 			}
-		
+
 			System.out.println(sb);
-			
+
 		}
 
 	}

@@ -1,4 +1,4 @@
-package Heap;
+package heap;
 
 
 // Working program with FastReader 

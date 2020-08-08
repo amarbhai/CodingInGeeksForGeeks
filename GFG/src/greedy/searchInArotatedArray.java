@@ -1,4 +1,4 @@
-package Greedy;
+package greedy;
 
 
 // Working program with FastReader 
